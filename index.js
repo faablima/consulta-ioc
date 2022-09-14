@@ -93,4 +93,3 @@ async function goBot(dado) {
 };
 
 goBot(valores) ;
-
