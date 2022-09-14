@@ -1,17 +1,24 @@
+// Puppeteer faz interação com o Browser
 const puppeteer = require('puppeteer');
+
+// Interagir com a planilha
 const xlsx = require('xlsx') ;
 
+// Declara variáveis
 let stateIp     ;
 let isp         ;
 let porcent     ;
 let ipState     ;
 let count = 0   ;
 
+// Lê planilha XLSX e envia para constante workbook
 const workbook = xlsx.readFile('./dataFile.xlsx') ;
 let worksheet = {};
 let valores = [] ;
 
+// Itera entre as abas das planilhas
 for(const sheet of workbook.SheetNames){
+    // Para cada aba joga o conteúdo em um json
     worksheet[sheet] = xlsx.utils.sheet_to_json(workbook.Sheets[sheet]) ;
 }
 
