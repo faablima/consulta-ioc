@@ -1,0 +1,6 @@
+# Ignorar módulos do node
+node_modules
+
+# Ignorar alguns arquivos
+*.json
+*.lock
