@@ -1,5 +1,6 @@
 // Puppeteer faz interação com o Browser
 const puppeteer = require('puppeteer');
+const sdk = require('api')('@virustotal/v3.0#1mk70h3zl6yyhea6');
 
 // Interagir com a planilha
 const xlsx = require('xlsx') ;
@@ -127,5 +128,24 @@ async function goBot(dado) {
     await browser.close() ;
 };
 
-goBot(valores) ;
 
+function getVirusTotal(dado) {
+    console.log("====================== VIRUS TOTAL API =======================================")
+    for (ip of dado) {
+        const options = {
+            method: 'GET',
+            headers: {
+              accept: 'application/json',
+              'x-apikey': '9321d18aa13c78df0a395d903a9033a173e8ef5d3966ee26cc9d812837982502' // Chave pessoal
+            }
+          };
+          
+          fetch(`https://www.virustotal.com/api/v3/ip_addresses/${ip.replace(/\s/g, '')}`, options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
+}
+
+goBot(valores);
+getVirusTotal(valores);
