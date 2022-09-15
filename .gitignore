@@ -1,6 +1,9 @@
-# Ignorar módulos do node
+# Ignore code-workspace
+*.code-workspace
+
+# Ignore node modules
 node_modules
 
-# Ignorar alguns arquivos
+# Ignore some files
 *.json
 *.lock
