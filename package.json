@@ -1,8 +1,10 @@
 {
   "name": "node",
   "version": "\\",
-  "lockfileVersion": 1,
-  "requires": true,
+  "main": "index.js",
+  "license": "MIT",
   "dependencies": {
+    "puppeteer": "^8.0.0",
+    "xlsx": "^0.16.9"
   }
 }
