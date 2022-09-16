@@ -281,3 +281,5 @@ function getVirusTotal(dado) {
 
 goBot(valores);
 getVirusTotal(valores);
+
+
